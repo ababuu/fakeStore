@@ -1,33 +1,165 @@
-# FakeStore E-Commerce App
+# FakeStore
 
-A modern, enterprise-grade e-commerce application built with React 18, shadcn/ui, Zustand, and Tailwind CSS. Features a beautiful UI with a complete shopping cart system and professional architecture.
+A full-stack e-commerceapp — React 18 SPA frontend backed by a FastAPI REST API, with JWT authentication via httpOnly cookies, a server-side cart, and a complete checkout + order history flow.
 
-🔗 [Live Preview](https://fake-store-navy-six.vercel.app/)
+```
+client/   React 18 · Zustand · Tailwind CSS · shadcn/ui
+server/   FastAPI · SQLAlchemy 2 · Alembic · SQLite · python-jose
+```
 
-## ✨ Features
+---
 
-### 🎨 Modern UI/UX
+## Features
 
-- **shadcn/ui Components**: Beautiful, accessible UI components
-- **Tailwind CSS**: Modern styling with responsive design
-- **Smooth Animations**: Professional transitions and hover effects
-- **Gradient Themes**: Purple/Indigo gradient color scheme
-- **Mobile-First**: Fully responsive across all devices
+- **Product catalog** — browse and filter 20 seeded products across 4 categories
+- **Auth** — register / login / logout via JWT stored in httpOnly cookies (no localStorage token)
+- **Cart** — guest cart in localStorage, synced to the server on login, full CRUD
+- **Checkout** — place an order from your cart; price/title/image are snapshotted at purchase time
+- **Order history** — view all past orders and individual order details
 
-### 🛒 Shopping Cart
+---
 
-- **Zustand State Management**: Global state management for cart
-- **Persistent Cart**: Cart persists in localStorage
-- **Quantity Management**: Increment/decrement product quantities
-- **Real-time Total**: Live price calculation
-- **Smooth Modals**: Beautiful dialog-based cart view
+## Quick Start (local dev)
 
-### 🏗️ Enterprise Architecture
+**Requirements:** Node 20+, Python 3.12+ (3.14 works with the pinned deps)
 
-- **Service Layer**: Separated API calls in dedicated services
-- **Custom Hooks**: Reusable hooks for data fetching
-- **Store Management**: Zustand stores for cart and products
-- **Utility Functions**: Helper functions for formatting and validation
+### 1 — Backend
+
+```bash
+cd server
+python -m venv .venv
+# Windows
+.venv\Scripts\activate
+# macOS / Linux
+source .venv/bin/activate
+
+pip install -r requirements.txt
+cp .env.example .env          # edit SECRET_KEY before production
+
+alembic upgrade head
+python -m app.utils.seed      # seeds 20 products from fakestoreapi.com
+
+uvicorn main:app --reload --port 8000
+```
+
+API available at `http://localhost:8000` — interactive docs at `/docs`.
+
+### 2 — Frontend
+
+```bash
+cd client
+cp .env.example .env          # REACT_APP_API_URL=http://localhost:8000/api/v1
+npm install
+npm start
+```
+
+App available at `http://localhost:3000`.
+
+---
+
+## Docker
+
+Runs the full stack with a single command. The SQLite database is stored in a named volume so it survives container restarts.
+
+```bash
+# Copy and fill in the root .env (only SECRET_KEY is required)
+cp .env.example .env
+
+docker compose up --build
+```
+
+| Service           | URL                        |
+| ----------------- | -------------------------- |
+| Frontend (nginx)  | http://localhost:3000      |
+| Backend (FastAPI) | http://localhost:8000      |
+| API docs          | http://localhost:8000/docs |
+
+The client container builds the React app with `REACT_APP_API_URL=/api/v1` so all API calls are proxied through nginx to the backend — no cross-origin requests in production.
+
+---
+
+## Project Structure
+
+```
+fakeStore/
+├── client/                   # React SPA
+│   ├── src/
+│   │   ├── components/       # Navbar, ProductCard, ShoppingCartModal, ui/
+│   │   ├── pages/            # Home, Shop, Login, Register, Checkout,
+│   │   │                     #   OrderConfirmation, Orders
+│   │   ├── services/         # axios wrappers (api, auth, cart, order)
+│   │   └── store/            # Zustand stores (auth, cart, product)
+│   ├── Dockerfile
+│   └── nginx.conf
+│
+├── server/                   # FastAPI backend
+│   ├── app/
+│   │   ├── models/           # SQLAlchemy ORM (Product, User, CartItem, Order)
+│   │   ├── routers/          # products, auth, cart, orders
+│   │   ├── schemas/          # Pydantic request/response models
+│   │   ├── utils/            # security (JWT + bcrypt), seed
+│   │   └── dependencies/     # auth FastAPI dependencies
+│   ├── alembic/              # database migrations
+│   ├── Dockerfile
+│   ├── entrypoint.sh
+│   └── requirements.txt
+│
+└── docker-compose.yml
+```
+
+---
+
+## API Reference
+
+All endpoints are prefixed with `/api/v1`.
+
+### Auth
+
+| Method | Path             | Auth | Description                 |
+| ------ | ---------------- | ---- | --------------------------- |
+| POST   | `/auth/register` | —    | Create account + set cookie |
+| POST   | `/auth/login`    | —    | Login + set cookie          |
+| POST   | `/auth/logout`   | —    | Clear cookie                |
+| GET    | `/auth/me`       | ✓    | Current user                |
+
+### Products
+
+| Method | Path                        | Description          |
+| ------ | --------------------------- | -------------------- |
+| GET    | `/products`                 | List all products    |
+| GET    | `/products/categories`      | List categories      |
+| GET    | `/products/category/{name}` | Products by category |
+| GET    | `/products/{id}`            | Single product       |
+
+### Cart
+
+| Method | Path                       | Description               |
+| ------ | -------------------------- | ------------------------- |
+| GET    | `/cart`                    | Get cart + total          |
+| POST   | `/cart/items`              | Add item                  |
+| PUT    | `/cart/items/{product_id}` | Update quantity           |
+| DELETE | `/cart/items/{product_id}` | Remove item               |
+| DELETE | `/cart`                    | Clear cart                |
+| POST   | `/cart/merge`              | Merge guest cart on login |
+
+### Orders
+
+| Method | Path           | Description                 |
+| ------ | -------------- | --------------------------- |
+| POST   | `/orders`      | Place order (converts cart) |
+| GET    | `/orders`      | List all orders             |
+| GET    | `/orders/{id}` | Single order                |
+
+---
+
+## Tech Stack
+
+**Frontend** — React 18, React Router 6, Zustand, Axios, Tailwind CSS, shadcn/ui (Radix UI), Lucide icons
+
+**Backend** — FastAPI, SQLAlchemy 2, Alembic, Pydantic v2, python-jose (JWT), bcrypt, SQLite (dev / Docker), uvicorn
+
+**Infrastructure** — Docker, docker compose, nginx (reverse proxy + static file server)
+
 - **Component Structure**: Organized component hierarchy
 
 ### 📦 Key Features

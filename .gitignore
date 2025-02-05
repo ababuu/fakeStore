@@ -1,39 +1,67 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# production
-/build
-
-# misc
-.DS_Store
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# IDE
+# ===============================
+#  IDE / OS / Editor
+# ===============================
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
-
-# OS
 .DS_Store
 Thumbs.db
 
-
+# ===============================
+#  Environment & Secrets
+# ===============================
+.env
+.env.*
+!.env.example
 .vercel
+
+# ===============================
+#  Docker
+# ===============================
+docker-compose.override.yml
+
+# ===============================
+#  Client (React / Node)
+# ===============================
+/client/node_modules/
+/client/build/
+/client/.pnp/
+/client/.pnp.js
+/client/coverage/
+/client/*.log
+/client/npm-debug.log*
+/client/yarn-debug.log*
+/client/yarn-error.log*
+/client/.env
+/client/.env.*
+!/client/.env.example
+
+# ===============================
+#  Server (Python / FastAPI)
+# ===============================
+/server/__pycache__/
+/server/**/__pycache__/
+/server/*.pyc
+/server/**/*.pyc
+/server/.venv/
+/server/venv/
+/server/env/
+/server/.pytest_cache/
+/server/.mypy_cache/
+/server/fakestore.db
+/server/alembic/versions/*.pyc   # optional, but fine
+/server/.env
+/server/.env.*
+!/server/.env.example
+
+# ===============================
+#  Root / Miscellaneous
+# ===============================
+coverage/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
