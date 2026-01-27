@@ -2,7 +2,7 @@
 
 A modern, enterprise-grade e-commerce application built with React 18, shadcn/ui, Zustand, and Tailwind CSS. Features a beautiful UI with a complete shopping cart system and professional architecture.
 
-🔗 [Live Preview](https://shopping-cart-react-19ff0.web.app/)
+🔗 [Live Preview](https://fake-store-navy-six.vercel.app/)
 
 ## ✨ Features
 

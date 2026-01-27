@@ -14,12 +14,12 @@ const Shop = () => {
       <Navbar />
       <ShoppingCartModal />
 
-      <div className="container mx-auto px-4 pt-24 pb-16">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-10 md:pb-16">
+        <div className="text-center mb-8 md:mb-12">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-2 md:mb-4 text-gray-900">
             Our Products
           </h1>
-          <p className="text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-gray-600">
             Browse through our complete collection of amazing products
           </p>
         </div>
@@ -27,18 +27,19 @@ const Shop = () => {
         {loading ? (
           <LoadingSpinner />
         ) : error ? (
-          <div className="text-center text-red-500 py-16">
-            <p className="text-xl mb-4">{error}</p>
+          <div className="text-center text-red-500 py-10 md:py-16">
+            <p className="text-base sm:text-xl mb-4">{error}</p>
             <Button
               onClick={() => window.location.reload()}
               variant="outline"
               size="lg"
+              className="text-base sm:text-lg"
             >
               Try Again
             </Button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
             {products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
