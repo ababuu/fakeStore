@@ -1,115 +1,232 @@
 # FakeStore E-Commerce App
 
-A modern, responsive shopping cart application built with React that fetches product data from the [Fake Store API](https://fakestoreapi.com/). Features a beautiful UI with featured products, shopping cart functionality, and smooth animations.
+A modern, enterprise-grade e-commerce application built with React 18, shadcn/ui, Zustand, and Tailwind CSS. Features a beautiful UI with a complete shopping cart system and professional architecture.
 
 🔗 [Live Preview](https://shopping-cart-react-19ff0.web.app/shop)
 
 ## ✨ Features
 
-- **Modern UI Design**: Beautiful gradient navigation, hero section, and card layouts
-- **Featured Products**: Homepage displays featured products with smooth animations
-- **Shopping Cart**: Fully functional cart with add/remove items and real-time total calculation
-- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
-- **Loading States**: User-friendly loading indicators while fetching data
-- **Error Handling**: Graceful error handling for API failures
+### 🎨 Modern UI/UX
+- **shadcn/ui Components**: Beautiful, accessible UI components
+- **Tailwind CSS**: Modern styling with responsive design
+- **Smooth Animations**: Professional transitions and hover effects
+- **Gradient Themes**: Purple/Indigo gradient color scheme
+- **Mobile-First**: Fully responsive across all devices
 
-## 🎨 Recent Improvements (v2.0)
+### 🛒 Shopping Cart
+- **Zustand State Management**: Global state management for cart
+- **Persistent Cart**: Cart persists in localStorage
+- **Quantity Management**: Increment/decrement product quantities
+- **Real-time Total**: Live price calculation
+- **Smooth Modals**: Beautiful dialog-based cart view
 
-### Fixed Issues
-- ✅ **Fixed Issue #1**: Homepage now properly displays featured products instead of appearing blank
-- ✅ Enhanced homepage with hero section and featured products preview
-- ✅ Improved cart functionality with better item management
+### 🏗️ Enterprise Architecture
+- **Service Layer**: Separated API calls in dedicated services
+- **Custom Hooks**: Reusable hooks for data fetching
+- **Store Management**: Zustand stores for cart and products
+- **Utility Functions**: Helper functions for formatting and validation
+- **Component Structure**: Organized component hierarchy
 
-### Design Enhancements
-- 🎨 Modern gradient navigation bar with smooth hover effects
-- 🎨 Professional hero section with call-to-action button
-- 🎨 Redesigned product cards with hover animations
-- 🎨 Enhanced shopping cart modal with better layout
-- 🎨 Improved color scheme using modern purple gradients
-- 🎨 Better typography and spacing throughout the app
-- 🎨 Added feature highlights section on homepage
-
-### Technical Improvements
-- ⚡ Better error handling and loading states
-- ⚡ Improved cart item management with unique IDs
-- ⚡ Enhanced responsive design for all screen sizes
-- ⚡ Cleaner code structure and better component organization
+### 📦 Key Features
+- Hero section with call-to-action
+- Featured products showcase
+- Complete product catalog
+- Shopping cart with full CRUD operations
+- Loading states and error handling
+- Feature highlights section
+- Responsive navigation
 
 ## 🚀 Technologies Used
 
-- React 17
-- React Router DOM v6
-- Fake Store API
-- CSS3 with modern animations
-- Google Fonts (Quicksand)
+### Core
+- **React 18.2**: Latest React with concurrent features
+- **React Router DOM 6**: Client-side routing
+- **Zustand 4.4**: Lightweight state management
+
+### UI & Styling
+- **shadcn/ui**: High-quality React component library
+- **Tailwind CSS 3.4**: Utility-first CSS framework
+- **Radix UI**: Accessible component primitives
+- **Lucide React**: Beautiful icon library
+- **CVA**: Class variance authority for component variants
+
+### Data & API
+- **Axios**: HTTP client for API requests
+- **Fake Store API**: Product data source
+
+### Developer Tools
+- **React Scripts 5**: Create React App build tools
+- **PostCSS**: CSS transformations
+- **Autoprefixer**: CSS vendor prefixing
+
+## 📁 Project Structure
+
+```
+shopping_cart_react/
+├── src/
+│   ├── components/           # Reusable UI components
+│   │   ├── ui/              # shadcn/ui components
+│   │   ├── Navbar.jsx
+│   │   ├── ProductCard.jsx
+│   │   ├── ShoppingCartModal.jsx
+│   │   └── LoadingSpinner.jsx
+│   ├── pages/               # Page components
+│   │   ├── Home.jsx
+│   │   └── Shop.jsx
+│   ├── services/            # API services
+│   │   ├── api.js
+│   │   └── productService.js
+│   ├── store/               # Zustand stores
+│   │   ├── useCartStore.js
+│   │   └── useProductStore.js
+│   ├── hooks/               # Custom hooks
+│   │   └── useProducts.js
+│   ├── lib/                 # Utilities
+│   │   └── utils.js
+│   ├── App.js
+│   ├── index.js
+│   └── index.css
+├── public/
+├── tailwind.config.js
+├── postcss.config.js
+├── jsconfig.json
+└── package.json
+```
+
+## 🎯 Recent Updates (v2.0)
+
+### Major Refactoring
+- ✅ **Fixed Node.js compatibility**: Upgraded to React Scripts 5 for Node 17+
+- ✅ **Complete architecture overhaul**: Enterprise-level folder structure
+- ✅ **Removed unused dependencies**: Cleaned up reactjs-popup, react-numeric-input, react-pro-sidebar
+- ✅ **Added modern stack**: shadcn/ui, Zustand, Tailwind CSS, Axios
+- ✅ **Service layer implementation**: Separated API logic from components
+- ✅ **Custom hooks**: Created reusable hooks for data fetching
+- ✅ **State management**: Implemented Zustand for global state
+- ✅ **Path aliases**: Added @/ import alias for cleaner imports
+
+### Previous Updates (v1.0)
+- ✅ **Fixed Issue #1**: Homepage blank loading issue
+- ✅ Enhanced homepage with hero section
+- ✅ Improved cart functionality
+
+## 🛠️ Installation & Setup
+
+### Prerequisites
+- Node.js 14+ (Recommended: Node.js 18+)
+- npm or yarn
+
+### Installation Steps
+
+1. **Clone the repository**
+```bash
+git clone <your-repo-url>
+cd shopping_cart_react
+```
+
+2. **Install dependencies**
+```bash
+npm install
+```
+
+3. **Start development server**
+```bash
+npm start
+```
+
+The app will open at [http://localhost:3000](http://localhost:3000)
+
+### Available Scripts
+
+```bash
+npm start      # Start development server
+npm build      # Build for production
+npm test       # Run tests
+npm eject      # Eject from Create React App
+```
+
+## 🎨 Design System
+
+### Colors
+- **Primary**: Purple gradient (#667eea → #764ba2)
+- **Accent**: Indigo shades
+- **Text**: Gray scale for hierarchy
+- **Destructive**: Red for delete actions
+
+### Components
+All UI components are built with shadcn/ui for consistency:
+- Button (multiple variants and sizes)
+- Card (product and feature cards)
+- Dialog (shopping cart modal)
+- Scroll Area (smooth scrolling)
+- Separator (visual dividers)
+
+## 📝 API Integration
+
+### Fake Store API
+- **Base URL**: `https://fakestoreapi.com`
+- **Endpoints Used**:
+  - `GET /products` - All products
+  - `GET /products?limit={n}` - Limited products
+  - `GET /products/{id}` - Single product
+  - `GET /products/categories` - All categories
+  - `GET /products/category/{category}` - Products by category
+
+### Service Layer
+API calls are abstracted in `services/productService.js` for:
+- Clean separation of concerns
+- Easy testing and mocking
+- Centralized error handling
+- Type safety potential
+
+## 🔧 Configuration
+
+### Path Aliases
+Configured in `jsconfig.json`:
+```json
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"]
+    }
+  }
+}
+```
+
+### Tailwind Configuration
+Custom theme extensions in `tailwind.config.js` for shadcn/ui compatibility.
+
+## 🚀 Deployment
+
+### Build for Production
+```bash
+npm run build
+```
+
+The optimized build will be in the `build/` directory, ready to deploy to:
+- Firebase Hosting
+- Vercel
+- Netlify
+- GitHub Pages
+- Any static hosting service
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 🙏 Acknowledgments
+
+- [Fake Store API](https://fakestoreapi.com/) for product data
+- [shadcn/ui](https://ui.shadcn.com/) for beautiful components
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+- [Zustand](https://github.com/pmndrs/zustand) for state management
+- [Radix UI](https://www.radix-ui.com/) for accessible primitives
 
 ---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Built with ❤️ using React, Tailwind CSS, and shadcn/ui
