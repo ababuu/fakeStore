@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from '../components/ui/button';
-import { Card, CardContent } from '../components/ui/card';
-import { Truck, Shield, RefreshCw, ArrowRight } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import ProductCard from '../components/ProductCard';
-import LoadingSpinner from '../components/LoadingSpinner';
-import ShoppingCartModal from '../components/ShoppingCartModal';
-import { useFeaturedProducts } from '../hooks/useProducts';
+import { Button } from "../components/ui/button";
+import { Card, CardContent } from "../components/ui/card";
+import { Truck, Shield, RefreshCw, ArrowRight } from "lucide-react";
+import Navbar from "../components/Navbar";
+import ProductCard from "../components/ProductCard";
+import LoadingSpinner from "../components/LoadingSpinner";
+import ShoppingCartModal from "../components/ShoppingCartModal";
+import { useFeaturedProducts } from "../hooks/useProducts";
 
 const Home = () => {
   const { featuredProducts, loading, error } = useFeaturedProducts(3);

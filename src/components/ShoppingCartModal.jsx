@@ -1,16 +1,11 @@
 import React from "react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from './ui/dialog';
-import { ScrollArea } from './ui/scroll-area';
-import { Separator } from './ui/separator';
-import { Button } from './ui/button';
-import { Minus, Plus, Trash2, ShoppingBag } from 'lucide-react';
-import useCartStore from '../store/useCartStore';
-import { formatCurrency } from '../lib/utils';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
+import { ScrollArea } from "./ui/scroll-area";
+import { Separator } from "./ui/separator";
+import { Button } from "./ui/button";
+import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
+import useCartStore from "../store/useCartStore";
+import { formatCurrency } from "../lib/utils";
 
 const ShoppingCartModal = () => {
   const {

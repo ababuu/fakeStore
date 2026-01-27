@@ -2,11 +2,12 @@
 
 A modern, enterprise-grade e-commerce application built with React 18, shadcn/ui, Zustand, and Tailwind CSS. Features a beautiful UI with a complete shopping cart system and professional architecture.
 
-🔗 [Live Preview](https://shopping-cart-react-19ff0.web.app/shop)
+🔗 [Live Preview](https://shopping-cart-react-19ff0.web.app/)
 
 ## ✨ Features
 
 ### 🎨 Modern UI/UX
+
 - **shadcn/ui Components**: Beautiful, accessible UI components
 - **Tailwind CSS**: Modern styling with responsive design
 - **Smooth Animations**: Professional transitions and hover effects
@@ -14,6 +15,7 @@ A modern, enterprise-grade e-commerce application built with React 18, shadcn/ui
 - **Mobile-First**: Fully responsive across all devices
 
 ### 🛒 Shopping Cart
+
 - **Zustand State Management**: Global state management for cart
 - **Persistent Cart**: Cart persists in localStorage
 - **Quantity Management**: Increment/decrement product quantities
@@ -21,6 +23,7 @@ A modern, enterprise-grade e-commerce application built with React 18, shadcn/ui
 - **Smooth Modals**: Beautiful dialog-based cart view
 
 ### 🏗️ Enterprise Architecture
+
 - **Service Layer**: Separated API calls in dedicated services
 - **Custom Hooks**: Reusable hooks for data fetching
 - **Store Management**: Zustand stores for cart and products
@@ -28,6 +31,7 @@ A modern, enterprise-grade e-commerce application built with React 18, shadcn/ui
 - **Component Structure**: Organized component hierarchy
 
 ### 📦 Key Features
+
 - Hero section with call-to-action
 - Featured products showcase
 - Complete product catalog
@@ -39,11 +43,13 @@ A modern, enterprise-grade e-commerce application built with React 18, shadcn/ui
 ## 🚀 Technologies Used
 
 ### Core
+
 - **React 18.2**: Latest React with concurrent features
 - **React Router DOM 6**: Client-side routing
 - **Zustand 4.4**: Lightweight state management
 
 ### UI & Styling
+
 - **shadcn/ui**: High-quality React component library
 - **Tailwind CSS 3.4**: Utility-first CSS framework
 - **Radix UI**: Accessible component primitives
@@ -51,10 +57,12 @@ A modern, enterprise-grade e-commerce application built with React 18, shadcn/ui
 - **CVA**: Class variance authority for component variants
 
 ### Data & API
+
 - **Axios**: HTTP client for API requests
 - **Fake Store API**: Product data source
 
 ### Developer Tools
+
 - **React Scripts 5**: Create React App build tools
 - **PostCSS**: CSS transformations
 - **Autoprefixer**: CSS vendor prefixing
@@ -96,6 +104,7 @@ shopping_cart_react/
 ## 🎯 Recent Updates (v2.0)
 
 ### Major Refactoring
+
 - ✅ **Fixed Node.js compatibility**: Upgraded to React Scripts 5 for Node 17+
 - ✅ **Complete architecture overhaul**: Enterprise-level folder structure
 - ✅ **Removed unused dependencies**: Cleaned up reactjs-popup, react-numeric-input, react-pro-sidebar
@@ -106,6 +115,7 @@ shopping_cart_react/
 - ✅ **Path aliases**: Added @/ import alias for cleaner imports
 
 ### Previous Updates (v1.0)
+
 - ✅ **Fixed Issue #1**: Homepage blank loading issue
 - ✅ Enhanced homepage with hero section
 - ✅ Improved cart functionality
@@ -113,23 +123,27 @@ shopping_cart_react/
 ## 🛠️ Installation & Setup
 
 ### Prerequisites
+
 - Node.js 14+ (Recommended: Node.js 18+)
 - npm or yarn
 
 ### Installation Steps
 
 1. **Clone the repository**
+
 ```bash
 git clone <your-repo-url>
 cd shopping_cart_react
 ```
 
 2. **Install dependencies**
+
 ```bash
 npm install
 ```
 
 3. **Start development server**
+
 ```bash
 npm start
 ```
@@ -148,13 +162,16 @@ npm eject      # Eject from Create React App
 ## 🎨 Design System
 
 ### Colors
+
 - **Primary**: Purple gradient (#667eea → #764ba2)
 - **Accent**: Indigo shades
 - **Text**: Gray scale for hierarchy
 - **Destructive**: Red for delete actions
 
 ### Components
+
 All UI components are built with shadcn/ui for consistency:
+
 - Button (multiple variants and sizes)
 - Card (product and feature cards)
 - Dialog (shopping cart modal)
@@ -164,6 +181,7 @@ All UI components are built with shadcn/ui for consistency:
 ## 📝 API Integration
 
 ### Fake Store API
+
 - **Base URL**: `https://fakestoreapi.com`
 - **Endpoints Used**:
   - `GET /products` - All products
@@ -173,7 +191,9 @@ All UI components are built with shadcn/ui for consistency:
   - `GET /products/category/{category}` - Products by category
 
 ### Service Layer
+
 API calls are abstracted in `services/productService.js` for:
+
 - Clean separation of concerns
 - Easy testing and mocking
 - Centralized error handling
@@ -182,7 +202,9 @@ API calls are abstracted in `services/productService.js` for:
 ## 🔧 Configuration
 
 ### Path Aliases
+
 Configured in `jsconfig.json`:
+
 ```json
 {
   "compilerOptions": {
@@ -195,16 +217,19 @@ Configured in `jsconfig.json`:
 ```
 
 ### Tailwind Configuration
+
 Custom theme extensions in `tailwind.config.js` for shadcn/ui compatibility.
 
 ## 🚀 Deployment
 
 ### Build for Production
+
 ```bash
 npm run build
 ```
 
 The optimized build will be in the `build/` directory, ready to deploy to:
+
 - Firebase Hosting
 - Vercel
 - Netlify

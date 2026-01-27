@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar from '../components/Navbar';
-import ProductCard from '../components/ProductCard';
-import LoadingSpinner from '../components/LoadingSpinner';
-import ShoppingCartModal from '../components/ShoppingCartModal';
-import { Button } from '../components/ui/button';
-import { useProducts } from '../hooks/useProducts';
+import Navbar from "../components/Navbar";
+import ProductCard from "../components/ProductCard";
+import LoadingSpinner from "../components/LoadingSpinner";
+import ShoppingCartModal from "../components/ShoppingCartModal";
+import { Button } from "../components/ui/button";
+import { useProducts } from "../hooks/useProducts";
 
 const Shop = () => {
   const { products, loading, error } = useProducts();

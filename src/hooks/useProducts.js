@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { productService } from '../services/productService';
-import useProductStore from '../store/useProductStore';
+import { productService } from "../services/productService";
+import useProductStore from "../store/useProductStore";
 
 export const useProducts = () => {
   const { products, loading, error, setProducts, setLoading, setError } =
