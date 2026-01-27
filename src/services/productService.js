@@ -1,13 +1,13 @@
-import api from './api';
+import api from "./api";
 
 export const productService = {
   // Get all products
   getAllProducts: async () => {
     try {
-      const response = await api.get('/products');
+      const response = await api.get("/products");
       return response.data;
     } catch (error) {
-      throw new Error('Failed to fetch products');
+      throw new Error("Failed to fetch products");
     }
   },
 
@@ -17,7 +17,7 @@ export const productService = {
       const response = await api.get(`/products?limit=${limit}`);
       return response.data;
     } catch (error) {
-      throw new Error('Failed to fetch featured products');
+      throw new Error("Failed to fetch featured products");
     }
   },
 
@@ -44,10 +44,10 @@ export const productService = {
   // Get all categories
   getCategories: async () => {
     try {
-      const response = await api.get('/products/categories');
+      const response = await api.get("/products/categories");
       return response.data;
     } catch (error) {
-      throw new Error('Failed to fetch categories');
+      throw new Error("Failed to fetch categories");
     }
   },
 };

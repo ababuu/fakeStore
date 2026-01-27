@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
-import { productService } from '@/services/productService';
-import useProductStore from '@/store/useProductStore';
+import { useEffect } from "react";
+import { productService } from '../services/productService';
+import useProductStore from '../store/useProductStore';
 
 export const useProducts = () => {
-  const { products, loading, error, setProducts, setLoading, setError } = useProductStore();
+  const { products, loading, error, setProducts, setLoading, setError } =
+    useProductStore();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -14,7 +15,7 @@ export const useProducts = () => {
         setProducts(data);
       } catch (err) {
         setError(err.message);
-        console.error('Error fetching products:', err);
+        console.error("Error fetching products:", err);
       } finally {
         setLoading(false);
       }
@@ -29,7 +30,14 @@ export const useProducts = () => {
 };
 
 export const useFeaturedProducts = (limit = 3) => {
-  const { featuredProducts, loading, error, setFeaturedProducts, setLoading, setError } = useProductStore();
+  const {
+    featuredProducts,
+    loading,
+    error,
+    setFeaturedProducts,
+    setLoading,
+    setError,
+  } = useProductStore();
 
   useEffect(() => {
     const fetchFeaturedProducts = async () => {
@@ -40,7 +48,7 @@ export const useFeaturedProducts = (limit = 3) => {
         setFeaturedProducts(data);
       } catch (err) {
         setError(err.message);
-        console.error('Error fetching featured products:', err);
+        console.error("Error fetching featured products:", err);
       } finally {
         setLoading(false);
       }
@@ -49,7 +57,13 @@ export const useFeaturedProducts = (limit = 3) => {
     if (featuredProducts.length === 0) {
       fetchFeaturedProducts();
     }
-  }, [limit, featuredProducts.length, setFeaturedProducts, setLoading, setError]);
+  }, [
+    limit,
+    featuredProducts.length,
+    setFeaturedProducts,
+    setLoading,
+    setError,
+  ]);
 
   return { featuredProducts, loading, error };
 };

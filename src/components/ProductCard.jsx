@@ -1,9 +1,15 @@
-import React from 'react';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { ShoppingCart } from 'lucide-react';
-import useCartStore from '@/store/useCartStore';
-import { formatCurrency, truncateText } from '@/lib/utils';
+import React from "react";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
+import { Button } from "./ui/button";
+import { ShoppingCart } from "lucide-react";
+import useCartStore from "../store/useCartStore";
+import { formatCurrency, truncateText } from "../lib/utils";
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useCartStore();

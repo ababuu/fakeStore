@@ -1,16 +1,16 @@
-import React from 'react';
+import React from "react";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from '@/components/ui/dialog';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { Separator } from '@/components/ui/separator';
-import { Button } from '@/components/ui/button';
+} from './ui/dialog';
+import { ScrollArea } from './ui/scroll-area';
+import { Separator } from './ui/separator';
+import { Button } from './ui/button';
 import { Minus, Plus, Trash2, ShoppingBag } from 'lucide-react';
-import useCartStore from '@/store/useCartStore';
-import { formatCurrency } from '@/lib/utils';
+import useCartStore from '../store/useCartStore';
+import { formatCurrency } from '../lib/utils';
 
 const ShoppingCartModal = () => {
   const {
@@ -118,9 +118,7 @@ const ShoppingCartModal = () => {
                 <span>Total:</span>
                 <span className="text-purple-600">{formatCurrency(total)}</span>
               </div>
-              <Button
-                className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 h-12 text-lg"
-              >
+              <Button className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 h-12 text-lg">
                 Proceed to Checkout
               </Button>
             </div>

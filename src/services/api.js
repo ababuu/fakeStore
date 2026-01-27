@@ -1,12 +1,12 @@
-import axios from 'axios';
+import axios from "axios";
 
-const BASE_URL = 'https://fakestoreapi.com';
+const BASE_URL = "https://fakestoreapi.com";
 
 const api = axios.create({
   baseURL: BASE_URL,
   timeout: 10000,
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
 });
 
@@ -17,7 +17,7 @@ api.interceptors.request.use(
   },
   (error) => {
     return Promise.reject(error);
-  }
+  },
 );
 
 // Response interceptor
@@ -27,14 +27,14 @@ api.interceptors.response.use(
   },
   (error) => {
     if (error.response) {
-      console.error('API Error:', error.response.status, error.response.data);
+      console.error("API Error:", error.response.status, error.response.data);
     } else if (error.request) {
-      console.error('Network Error:', error.message);
+      console.error("Network Error:", error.message);
     } else {
-      console.error('Error:', error.message);
+      console.error("Error:", error.message);
     }
     return Promise.reject(error);
-  }
+  },
 );
 
 export default api;

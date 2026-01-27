@@ -1,5 +1,5 @@
-import { create } from 'zustand';
-import { persist, createJSONStorage } from 'zustand/middleware';
+import { create } from "zustand";
+import { persist, createJSONStorage } from "zustand/middleware";
 
 const useCartStore = create(
   persist(
@@ -17,7 +17,7 @@ const useCartStore = create(
             cart: cart.map((item) =>
               item.id === product.id
                 ? { ...item, quantity: item.quantity + 1 }
-                : item
+                : item,
             ),
           });
         } else {
@@ -43,7 +43,7 @@ const useCartStore = create(
 
         set({
           cart: get().cart.map((item) =>
-            item.id === productId ? { ...item, quantity } : item
+            item.id === productId ? { ...item, quantity } : item,
           ),
         });
       },
@@ -54,7 +54,7 @@ const useCartStore = create(
           cart: get().cart.map((item) =>
             item.id === productId
               ? { ...item, quantity: item.quantity + 1 }
-              : item
+              : item,
           ),
         });
       },
@@ -67,7 +67,7 @@ const useCartStore = create(
             cart: get().cart.map((item) =>
               item.id === productId
                 ? { ...item, quantity: item.quantity - 1 }
-                : item
+                : item,
             ),
           });
         } else {
@@ -99,7 +99,7 @@ const useCartStore = create(
       getCartTotal: () => {
         return get().cart.reduce(
           (total, item) => total + item.price * item.quantity,
-          0
+          0,
         );
       },
 
@@ -109,10 +109,10 @@ const useCartStore = create(
       },
     }),
     {
-      name: 'cart-storage',
+      name: "cart-storage",
       storage: createJSONStorage(() => localStorage),
-    }
-  )
+    },
+  ),
 );
 
 export default useCartStore;
