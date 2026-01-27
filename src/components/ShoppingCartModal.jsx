@@ -36,7 +36,7 @@ const ShoppingCartModal = () => {
             <p className="text-xl text-muted-foreground">Your cart is empty</p>
             <Button
               onClick={closeCart}
-              className="mt-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
+              className="mt-4 bg-slate-900 hover:bg-slate-800"
             >
               Continue Shopping
             </Button>
@@ -111,9 +111,9 @@ const ShoppingCartModal = () => {
               <Separator />
               <div className="flex justify-between text-xl font-bold">
                 <span>Total:</span>
-                <span className="text-purple-600">{formatCurrency(total)}</span>
+                <span className="text-slate-900">{formatCurrency(total)}</span>
               </div>
-              <Button className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 h-12 text-lg">
+              <Button className="w-full bg-slate-900 hover:bg-slate-800 h-12 text-lg">
                 Proceed to Checkout
               </Button>
             </div>

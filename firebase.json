@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "shopping-cart-react",
     "public": "build",
     "ignore": [
       "firebase.json",

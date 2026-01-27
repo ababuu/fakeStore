@@ -36,14 +36,14 @@ const ProductCard = ({ product }) => {
         <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
           {truncateText(product.description, 80)}
         </p>
-        <p className="text-2xl font-bold text-purple-600">
+        <p className="text-2xl font-bold text-slate-900">
           {formatCurrency(product.price)}
         </p>
       </CardContent>
       <CardFooter className="p-4 pt-0">
         <Button
           onClick={handleAddToCart}
-          className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
+          className="w-full bg-slate-900 hover:bg-slate-800 text-white"
         >
           <ShoppingCart className="mr-2 h-4 w-4" />
           Add to Cart

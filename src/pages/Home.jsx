@@ -18,22 +18,22 @@ const Home = () => {
       <ShoppingCartModal />
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-16 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 transform -skew-y-3 origin-top-left"></div>
-        <div className="relative container mx-auto px-4 py-20">
-          <div className="text-center text-white max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
-              Welcome to FakeStore
+      <section className="pt-32 pb-20 bg-gradient-to-b from-slate-50 to-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-slate-900 tracking-tight">
+              Modern Shopping
+              <span className="block text-slate-600 mt-2">Simplified</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-purple-100">
-              Discover amazing products at unbeatable prices
+            <p className="text-xl md:text-2xl mb-10 text-slate-600 max-w-2xl mx-auto">
+              Discover curated products with seamless shopping experience
             </p>
             <Link to="/products">
               <Button
                 size="lg"
-                className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-8 py-6 shadow-xl hover:shadow-2xl transition-all hover:scale-105"
+                className="bg-slate-900 text-white hover:bg-slate-800 text-lg px-10 py-6 rounded-full shadow-lg hover:shadow-xl transition-all"
               >
-                Shop Now
+                Explore Products
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
@@ -77,7 +77,7 @@ const Home = () => {
           <Link to="/products">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
+              className="bg-slate-900 hover:bg-slate-800 text-white rounded-full"
             >
               View All Products
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -92,8 +92,8 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="text-center border-none shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="pt-8 pb-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 mb-4">
-                  <Truck className="h-8 w-8 text-purple-600" />
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-100 mb-4">
+                  <Truck className="h-8 w-8 text-slate-700" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Free Shipping</h3>
                 <p className="text-gray-600">On orders over $50</p>
@@ -102,8 +102,8 @@ const Home = () => {
 
             <Card className="text-center border-none shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="pt-8 pb-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-indigo-100 mb-4">
-                  <Shield className="h-8 w-8 text-indigo-600" />
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-100 mb-4">
+                  <Shield className="h-8 w-8 text-slate-700" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Secure Payment</h3>
                 <p className="text-gray-600">100% secure transactions</p>
@@ -112,8 +112,8 @@ const Home = () => {
 
             <Card className="text-center border-none shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="pt-8 pb-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 mb-4">
-                  <RefreshCw className="h-8 w-8 text-purple-600" />
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-100 mb-4">
+                  <RefreshCw className="h-8 w-8 text-slate-700" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Easy Returns</h3>
                 <p className="text-gray-600">30-day return policy</p>
